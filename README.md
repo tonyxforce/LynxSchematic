@@ -21,7 +21,7 @@ The first upload must be done with JTAG. <!-- ADD: JTAG upload instructions --> 
 A method for uploading over JTAG follows:
 1) If your HIB's revision is > 2.3, solder on a JTAG connector or some leads
 2) Acquire a "FTDI FT2232H Mini Module" to use as a JTAG debug probe. A genuine one from FTDI has a better chance of working reliably.
-3) Connect the Mini Module to the HIB. A clean way of doing this is by making an adapter out of some 0.1" pitch header and half of one of the the pre terminated cables Molex sells that connect to the HIB's JTAG connector. See below for the part number. The pinout of the JTAG connector can be found in the schematic. Connect  
+3) Connect the Mini Module to the HIB. A clean way of doing this is by making an adapter out of some 0.1" pitch header and half of one of the the pre terminated cables Molex sells that connect to the HIB's JTAG connector. See below for the cable's part number. The pinout of the JTAG connector can be found in the schematic. Connect  
     - GND to GND
     - TCK to ADBUS0
     - TDI to ADBUS1
@@ -37,11 +37,11 @@ If firmware has be uploaded before it can be upgraded the same way or with the b
 ### FT230XQ
 There is no firmware for this device, but it needs to have its config updated. Its config holds the serial number for the HIB, so when writing the same config to many devices be careful to not overwrite the serial number field. As well, it is connected to the reset and bootloader entry pins of the MCU and by default it will drive these pins to ground which will hold the MCU in reset forever. To fix this the CBUS pin modes of need to be changed to GPIO. The easiest way to do this is with [FTDI's FT_Prog](https://ftdichip.com/utilities/) utility, but it also can be done with [libftdi](https://www.intra2net.com/en/developer/libftdi/index.php) or [FTDI's d2xx](https://ftdichip.com/drivers/d2xx-drivers/) library. To update the modes with FT_Prog, connect the device to a computer running the program, edit `Hardware Specific` -> `CBUS Signals` to all be `GPIO`, and save the new config to the device.
 
-### BNO055 & BHI260AP IMUs
-Both IMU's have some firmware on them which can uploaded and read over SWD. I don't know if it's just the stock firmware or something custom.
+### BNO055 IMU
+The BNO055 IMU has built in firmware from Bosch. It can be updated, but it isn't intended to be replaced by user firmware. If the IMU has to be replaced whatever firmware that ships on the IMU from the factory will be fine. 
 
-### W25Q64JWSSIQ SPI Flash
-This may not be used, but it may also have unique calibration data. It is yet to be tested.
+### BHI260AP IMU
+The BHI260AP IMU has some built in libraries and a bootloader stored in ROM, but the user has to supply firmware. It is either supplied by the host device or it is read from an external SPI flash. On the Lynx HIB an external W25Q64JWSSIQ SPI Flash is used. The flash contains the same data across devices, so it probably doesn't have any device specific calibration in it and if the flash has to be replaced the data from one HIB's flash can be copied to another's
 
 ## Components
 - A large chunk of the passives are in a 0603 package
@@ -96,8 +96,8 @@ Many of these have labels with more characters listed, but those parts are date 
 | XT30 Male | Amass XT30UPB-M |
 | XT30 Female | Amass XT30UPB-F |
 | Mini USB B | MUSBS5FBM1RA | This part number exists nowhere on the internet. It is Leoco product series 0850 and P/N 0850BFBD111. The F could be J or K as the gold plating thickness is unknown. TE Connectivity P/N 1734035-1 seems to have the same pad dimensions, so it may work |
-| JTAG Connector Female Molex | 53398-0671 | Connector not included on revision > 2.3. Same part should fit on SPI connector |
-| JTAG Connector Male Cable Molex | 15134-0605 | Not on Lynx, but helpful for connecting a debugger |
+| JTAG Connector Female | Molex 53398-0671 | Connector not included on revision > 2.3. Same part should fit on SPI connector |
+| JTAG Connector Male Cable | Molex 15134-0605 | Not on Lynx HIB, but helpful for connecting a debugger |
 | All shrouded external connectors | JST PH |
 | All motor connectors | JST VH |
 
@@ -105,17 +105,21 @@ Many of these have labels with more characters listed, but those parts are date 
 All from Bel Power? Bel Fuse? They are green.
 | Description | Part Number | Additional Info |
 | ----------- | ----------- | -------- |
-| b2 Fuse | 0ZCJ0200FF2C | 2A hold current. Used on servo ports |
-| bS Fuse | 0ZCH0150FF2E | 1.5A hold current. Used for USB port |
-| b1 Fuse | 0ZCJ0100FF2E | 1A hold current. Used for GPIO ports |
-| bM Fuse | 0ZCK0050FF2E | 0.5A hold current. Used for I2C, analog, and encoder ports |
+| 2A hold current | 0ZCJ0200FF2C | Labeled b2. Used on servo ports |
+| 1.5A hold current | 0ZCH0150FF2E | Labeled bS. Used for USB port |
+| 1A hold current | 0ZCJ0100FF2E | Labeled b1. Used for GPIO ports |
+| 0.5A hold current | 0ZCK0050FF2E | Labeled bM. Used for I2C, analog, and encoder ports |
+
+### Other
+| Description | Part Number | Additional Info |
+| ----------- | ----------- | -------- |
+| USB Common Mode Choke | ACM-0603-900-T | L2 |
 
 ### Mystery Components
-- D2 - Different from revision == 2.3 to revision > 2.3
+- D2 - Different from revision 2.3 to revision > 2.3
 - D3 - Maybe ESD Protection Diode LittelFuse SMF17A
 - All the capacitors
 - L1
-- L2
 - Y2 - 16 MHz main oscillator
 - Y1 - revision 2.3 IMU oscillator. 32.768 KHz
  

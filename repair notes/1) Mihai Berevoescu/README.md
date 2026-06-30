@@ -173,7 +173,7 @@ Here is a detailed list of broken/replaced parts (prices from mouser.com / one p
  - U20 TM4C123GH6PGEI7 - main MCU ($16.32)
  - U23 TPS562209 - SMPS for 3.3V rail ($0.74)
  - U15 FT230XQ-R - USB-to-Serial bridge ($2.26)
- - U22 & U23 SN74LVC8T245 - bus level shifter (2x $1.79)
+ - U21 & U22 SN74LVC8T245 - bus level shifter (2x $1.79)
  - U5 & U6 - CPDV5-5V0U - ESD protection diodes (2x $0.28)
 
 Strangely both the BHI260 (IMU) and ST3485EB (RS485 transceiver) survived. I 

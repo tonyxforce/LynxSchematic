@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20250114)
+	(version 20260306)
 	(generator "eeschema")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(uuid "a3d12dc7-033a-4c99-b909-7e1454b0334e")
 	(paper "A4")
 	(lib_symbols)
@@ -98,11 +98,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "0c7f1e9d-643a-4741-8c79-f8bf32316efb")
 		(property "Sheetname" "12V"
 			(at 99.06 55.1684 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -112,12 +114,14 @@
 		)
 		(property "Sheetfile" "12v.kicad_sch"
 			(at 99.06 69.1646 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -140,11 +144,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "1b79f0e7-7983-46d6-a3f5-dfb61ac90c92")
 		(property "Sheetname" "3.3V"
 			(at 123.19 60.452 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -154,12 +160,14 @@
 		)
 		(property "Sheetfile" "3v3.kicad_sch"
 			(at 123.19 65.3546 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -183,11 +191,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "22d5d558-d68f-4f36-9580-06c4ed28e25a")
 		(property "Sheetname" "GPIO"
 			(at 173.99 84.3784 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -197,12 +207,14 @@
 		)
 		(property "Sheetfile" "gpio.kicad_sch"
 			(at 173.99 95.8346 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -226,11 +238,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "2852d2a3-22cd-4266-9d0c-f9eb62968661")
 		(property "Sheetname" "USB"
 			(at 119.38 52.6284 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -240,12 +254,14 @@
 		)
 		(property "Sheetfile" "usb.kicad_sch"
 			(at 119.38 57.7346 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -269,11 +285,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "295547b4-65e9-4ea1-a382-ad7656419152")
 		(property "Sheetname" "I2C"
 			(at 173.99 70.4084 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -283,12 +301,14 @@
 		)
 		(property "Sheetfile" "i2c.kicad_sch"
 			(at 173.99 81.8646 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -312,11 +332,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "7b292646-ebce-4304-945c-60713d7e1d49")
 		(property "Sheetname" "Analog In"
 			(at 173.99 98.3484 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -326,12 +348,14 @@
 		)
 		(property "Sheetfile" "analog_in.kicad_sch"
 			(at 173.99 103.4546 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -355,11 +379,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "8e836c84-fd1a-48d9-95f5-4bd0e47d0fa4")
 		(property "Sheetname" "RS485"
 			(at 173.99 62.7884 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -369,12 +395,14 @@
 		)
 		(property "Sheetfile" "rs485.kicad_sch"
 			(at 173.99 67.8946 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -398,11 +426,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "90aa235e-b43e-4667-8ffa-fd21dbf822c0")
 		(property "Sheetname" "VREFA+ Generator"
 			(at 148.59 60.2484 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -412,12 +442,14 @@
 		)
 		(property "Sheetfile" "vrefa_plus.kicad_sch"
 			(at 148.59 66.6246 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -441,11 +473,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "a0a9daa1-61e2-4f4c-9011-5688c02ebbf1")
 		(property "Sheetname" "5V"
 			(at 119.38 99.6184 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -455,12 +489,14 @@
 		)
 		(property "Sheetfile" "5v.kicad_sch"
 			(at 119.38 104.7246 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -484,11 +520,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "a524dd7d-621e-4997-8b8c-c6527e771780")
 		(property "Sheetname" "LED"
 			(at 194.31 55.1684 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -498,12 +536,14 @@
 		)
 		(property "Sheetfile" "led.kicad_sch"
 			(at 194.31 60.2746 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -527,11 +567,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "a9095bc3-73ca-413d-b1ae-a1ad45027eec")
 		(property "Sheetname" "User Button"
 			(at 194.31 62.7884 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -541,12 +583,14 @@
 		)
 		(property "Sheetfile" "button.kicad_sch"
 			(at 194.31 67.8946 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -570,11 +614,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "b8f79c65-c701-4073-81e3-f70b39f8d88b")
 		(property "Sheetname" "Debug UART"
 			(at 173.99 55.1684 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -584,12 +630,14 @@
 		)
 		(property "Sheetfile" "debug_uart.kicad_sch"
 			(at 173.99 60.2746 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -612,11 +660,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "bac669f6-d902-48ba-ac0a-3aa8bc4d7561")
 		(property "Sheetname" "SPI"
 			(at 135.636 65.532 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -626,12 +676,14 @@
 		)
 		(property "Sheetfile" "spi.kicad_sch"
 			(at 140.462 83.566 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -655,11 +707,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "c2bf59d1-7061-4bc6-a22a-4eecf0a515d0")
 		(property "Sheetname" "MCU"
 			(at 143.51 69.1384 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -669,12 +723,14 @@
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
 			(at 143.51 85.6746 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -698,11 +754,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "c91c1107-fb60-42c6-b2d0-8c8672ef1044")
 		(property "Sheetname" "Android Header"
 			(at 119.38 88.1884 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -712,12 +770,14 @@
 		)
 		(property "Sheetfile" "android_header.kicad_sch"
 			(at 119.38 93.2946 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -741,11 +801,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "dce71a3c-778e-49e9-9add-f803d8ce3d57")
 		(property "Sheetname" "IMU"
 			(at 154.94 88.1884 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -755,12 +817,14 @@
 		)
 		(property "Sheetfile" "imu.kicad_sch"
 			(at 154.94 97.1046 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -784,11 +848,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "e8cf6190-eb38-4315-837d-fd912537e657")
 		(property "Sheetname" "Motors"
 			(at 99.06 71.6784 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -798,12 +864,14 @@
 		)
 		(property "Sheetfile" "motors.kicad_sch"
 			(at 99.06 103.4546 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
