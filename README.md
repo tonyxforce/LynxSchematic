@@ -15,21 +15,56 @@ This schematic was created from a revision 2.3 Lynx HIB. This revision uses a Bo
 ### MCU
 The MCU firmware can be found on [REV's website](https://docs.revrobotics.com/duo-control/managing-the-control-system/updating-firmware/firmware-changelog).
 
+#### Notes on replacing the MCU
+- A heated plate is recomended to preheat the board before trying to remove or resolder the MCU.
+- You can source the component off of Mouser Electronics, but prepare for astronomical shipping costs. If you can find a cheaper source (with 1 MOQ), pull requests are welcome.
+- Try not to overheat the MCU while soldering, but I was blasting it with 400˚C air for a solid 30 minutes and it seems to still work.
+- After soldering in the new MCU, give power on the battery connector (preferably with a limited current power supply), check 3.3v present on C69 (nice) and check 1.2V present on C28, C30 or C34 (all connected in parallel). If 1.2V is missing or shorted, check soldering, reheat the pads on the right side. If 3.3V is missing, check for shorts.
+- the 5V rail is not always on. [The buck converter IC's enable pin is tied to a GPIO on the MCU, if the MCU is not soldered, it may not start up by itself.](https://github.com/tonyxforce/LynxSchematic/photos/5v%20regulator%20enable_email%20from%20REV.png) 
+
 #### First Upload
-The first upload must be done with JTAG. <!-- ADD: JTAG upload instructions --> It may be possible to do over UART with the bootloader, but it hasn't been tested yet. 
+The first upload must be done with JTAG. It may be possible to do over UART with the bootloader, but it hasn't been tested yet. 
 
 A method for uploading over JTAG follows:
 1) If your HIB's revision is > 2.3, solder on a JTAG connector or some leads
-2) Acquire a "FTDI FT2232H Mini Module" to use as a JTAG debug probe. A genuine one from FTDI has a better chance of working reliably.
-3) Connect the Mini Module to the HIB. A clean way of doing this is by making an adapter out of some 0.1" pitch header and half of one of the the pre terminated cables Molex sells that connect to the HIB's JTAG connector. See below for the cable's part number. The pinout of the JTAG connector can be found in the schematic. Connect  
-    - GND to GND
-    - TCK to ADBUS0
-    - TDI to ADBUS1
-    - TDO to ADBUS2
-    - TMS to ADBUS3
-4) Download [OpenOCD](https://openocd.org/)
-5) Download the config files for the Lynx and the Mini Module [here](https://github.com/DuckTapeAndAPrayer/DuckLynx/tree/master/openocd%20configs)
-6) Run `openocd -f ftdi_lynx.cfg -c "program <path to firmware file> reset; shutdown`
+
+2) Acquire a "FTDI FT2232H Mini Module" to use as a JTAG debug probe. A genuine one from FTDI has a better chance of working reliably. Alternatively, use an ST-Link from STMicroelectronics. (An ST-Link v2 was tested but a V1 should also work, it may need a config change), I recommend this approach since the FTDI module can be a bit pricey (around $30), while an ST-Link can be had for as little as $3.
+
+3) Connect the Mini Module or the ST-Link to the HIB. A clean way of doing this is by making an adapter out of some 0.1" pitch header and half of one of the the pre terminated cables Molex sells that connect to the HIB's JTAG connector. See below for the cable's part number. Please note that this adapter cable can be purchased for cheap since [the connector is the same as on a CYD (Cheap Yellow Display)](https://forum.arduino.cc/t/cyd-peripheral-leads/1408501). I recommend soldering a 4 pin connector, since you can tap the 3.3v and GND from elsewhere. The pinout of the JTAG connector (Assuming USB port facing up):
+  - VCC
+  - SWCLK
+  - SWDIO
+  - TDI
+  - TDO
+  - GND
+
+If you are using an FT2232H module:
+Connect  
+  - GND to GND
+  - TCK to ADBUS0
+  - TDI to ADBUS1
+  - TDO to ADBUS2
+  - TMS to ADBUS3
+
+If you are using an ST-Link:
+Connect
+  - GND to GND
+  - SWCLK to SWCLK
+  - SWDIO to SWDIO
+
+No other connections needed, give power to the board through the battery connector (anything more than 3.3v is sufficient, 5v is tested and working).
+
+4) Download [OpenOCD](https://openocd.org/) (If you are on a debian-based linux, just run `sudo apt install openocd`)
+
+5) Download the config files for the Lynx and the Mini Module/ST-Link [here](https://github.com/
+DuckTapeAndAPrayer/LynxSchematic/tree/master/openocd%20configs)
+
+6) If you're using the FTDI module, run `openocd -f ftdi_lynx.cfg -c "program <path to firmware file> reset exit"`
+If you're using an ST-Link, run `openocd -f stlink_tm4c123.cfg -c "program <path to firmware file> reset exit"`
+
+7) Remove power from the board and reapply it. It should start working normally. (LED Blinking)
+
+This flashing process has been tested with OpenOCD v0.12.0 on debian linux.
 
 #### Subsequent uploads
 If firmware has be uploaded before it can be upgraded the same way or with the bootloader by using REV Hardware Client, the FtcRobotController app, or [DuckUpdate](https://github.com/DuckTapeAndAPrayer/DuckLynx/tree/master/DuckUpdate). [TI's LMFlashProgrammer](https://www.ti.com/tool/LMFLASHPROGRAMMER) will also work if the MCU is restarted into the bootloader. This can be done with DuckUpdate or with [REV's node-expansion-hub-ftdi](https://github.com/REVrobotics/node-expansion-hub-ftdi).
@@ -122,9 +157,11 @@ All from Bel Power? Bel Fuse? They are green.
 - L1
 - Y2 - 16 MHz main oscillator
 - Y1 - revision 2.3 IMU oscillator. 32.768 KHz
- 
+
 ## Notes about the board
 The board seems to have more than two layers, so the creation of a schematic by observation wasn't possible.
+
+Make sure to not touch the 3.3v switching converter circuitry while the board is powered, since it can throw off the voltage reference and can make the USB converter IC blow up in a nice bunch of sparks (have happened)
 
 ### Compute board header (J18)
 The header that connects to the compute board (if equipped).
