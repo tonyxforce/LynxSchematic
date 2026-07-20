@@ -55,7 +55,7 @@ Connect
 
 No other connections needed, give power to the board through the battery connector (anything more than 3.3v is sufficient, 5v is tested and working).
 
-4) Download [OpenOCD](https://openocd.org/) (If you are on a debian-based linux, just run `sudo apt install openocd`)
+4) Download [OpenOCD](https://openocd.org/) (If you are on a Debian-based Linux distro, just run `sudo apt install openocd`)
 
 5) Download the config files for the Lynx and the Mini Module/ST-Link [here](https://github.com/
 DuckTapeAndAPrayer/LynxSchematic/tree/master/openocd%20configs)
