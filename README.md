@@ -19,7 +19,7 @@ The MCU firmware can be found on [REV's website](https://docs.revrobotics.com/du
 - A heated plate is recomended to preheat the board before trying to remove or resolder the MCU.
 - You can source the component off of Mouser Electronics, but prepare for astronomical shipping costs. If you can find a cheaper source (with 1 MOQ), pull requests are welcome.
 - Try not to overheat the MCU while soldering, but I was blasting it with 400˚C air for a solid 30 minutes and it seems to still work.
-- After soldering in the new MCU, give power on the battery connector (preferably with a limited current power supply), check 3.3v present on C69 (nice) and check 1.2V present on C28, C30 or C34 (all connected in parallel). If 1.2V is missing or shorted, check soldering, reheat the pads on the right side. If 3.3V is missing, check for shorts.
+- After soldering in the new MCU, give power on the battery connector (preferably with a limited current power supply), check 3.3v present on C63 and check 1.2V present on C28, C30, C34 and C55 (should all be connected in parallel). If 1.2V is missing or shorted, check soldering and/or reheat the pads. If 3.3V is missing, check for shorts.
 - The 5V rail is not always on. [The buck converter IC's enable pin is tied to a GPIO on the MCU; if the MCU is not soldered, it may not start up by itself.](https://github.com/tonyxforce/LynxSchematic/photos/5v%20regulator%20enable_email%20from%20REV.png)
 - I couldn't find a pinout diagram for this chip. Not even the datasheet includes it and google pretends this chip doesn't even exist and tries to redirect me to TM4C123GH6PM. If you can find it, pull requests are welcome.
 
