@@ -162,7 +162,7 @@ All from Bel Power? Bel Fuse? They are green.
 ## Notes about the board
 The board seems to have more than two layers, so the creation of a schematic by observation wasn't possible.
 
-Make sure to not touch the 3.3v switching converter circuitry while the board is powered, since it can throw off the voltage reference and can make the USB converter IC blow up in a nice bunch of sparks (have happened)
+Make sure to not touch the 3.3v switching converter circuitry while the board is powered, since it can throw off the voltage reference and can make the USB converter IC blow up in a nice bunch of sparks (which has happened)
 
 ### Compute board header (J18)
 The header that connects to the compute board (if equipped).
