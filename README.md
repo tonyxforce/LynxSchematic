@@ -65,7 +65,7 @@ If you're using an ST-Link, run `openocd -f stlink_tm4c123.cfg -c "program <path
 
 7) Remove power from the board and reapply it. It should start working normally. (LED Blinking)
 
-This flashing process has been tested with OpenOCD v0.12.0 on debian linux.
+This flashing process has been tested with OpenOCD v0.12.0 on Debian Linux.
 
 #### Subsequent uploads
 If firmware has be uploaded before it can be upgraded the same way or with the bootloader by using REV Hardware Client, the FtcRobotController app, or [DuckUpdate](https://github.com/DuckTapeAndAPrayer/DuckLynx/tree/master/DuckUpdate). [TI's LMFlashProgrammer](https://www.ti.com/tool/LMFLASHPROGRAMMER) will also work if the MCU is restarted into the bootloader. This can be done with DuckUpdate or with [REV's node-expansion-hub-ftdi](https://github.com/REVrobotics/node-expansion-hub-ftdi).
